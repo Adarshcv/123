@@ -22,18 +22,21 @@
 	  die("Connection failed: " . $conn->connect_error);
 	}
 	
-	$sql = "SELECT imgurl FROM mobile where rating=4";
+	$sql = "SELECT * FROM mobile where rating=4.8";
 	$result = $conn->query($sql);
 	
 	if ($result->num_rows > 0) {
-       
+       $brand=$row['brand'];
+       $name=$row['name'];
+       $price=$row['price'];
+       $imgurl=$row['imgurl'];
+       $url=$row['url'];
 	  }
 	 else {
 	  echo "0 results";
 	}
   
 	$conn->close();
-	?>
 
   </head>
 
@@ -53,7 +56,11 @@
         <img data-image="blue" src="Image_5.png" alt="">
         <img data-image="red" class="active" src="Image_2.png" alt="">
       </div>
-
+      echo $brand=$row['brand'];
+       echo $name=$row['name'];
+       echo $price=$row['price'];
+       echo $imgurl=$row['imgurl'];
+       echo $url=$row['url'];
 
       <!-- Right Column -->
       <div class="right-column">
@@ -114,5 +121,6 @@
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" charset="utf-8"></script>
     <script src="script.js" charset="utf-8"></script>
+    ?>
   </body>
 </html>
