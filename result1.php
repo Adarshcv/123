@@ -9,7 +9,26 @@
     <!-- CSS -->
     <link href="style1.css" rel="stylesheet">
     <meta name="robots" content="noindex,follow" />
-    <?php
+    
+  </head>
+
+  <body>
+  
+	<div id="Gadget_Finder">
+		<span style="font-style:normal;font-weight:normal;font-size:50px;color:rgba(0,100,254,1);">Gadget </span><span style="font-style:normal;font-weight:normal;font-size:50px;">Finder</span>
+    </div>
+</div>
+
+    <main class="container">
+
+        
+      <!-- Left Column / Headphones Image -->
+      <div class="left-column">
+        <img data-image="black" src="Image_2.png" alt="">
+        <img data-image="blue" src="Image_5.png" alt="">
+        <img data-image="red" class="active" src="Image_2.png" alt="">
+      </div>
+      <?php
 	$servername = "localhost";
 	$username = "root";
 	$password = "";
@@ -37,30 +56,13 @@
 	}
   
 	$conn->close();
-
-  </head>
-
-  <body>
-  
-	<div id="Gadget_Finder">
-		<span style="font-style:normal;font-weight:normal;font-size:50px;color:rgba(0,100,254,1);">Gadget </span><span style="font-style:normal;font-weight:normal;font-size:50px;">Finder</span>
-    </div>
-</div>
-
-    <main class="container">
-
-        
-      <!-- Left Column / Headphones Image -->
-      <div class="left-column">
-        <img data-image="black" src="Image_2.png" alt="">
-        <img data-image="blue" src="Image_5.png" alt="">
-        <img data-image="red" class="active" src="Image_2.png" alt="">
-      </div>
+    
       echo $brand=$row['brand'];
        echo $name=$row['name'];
        echo $price=$row['price'];
        echo $imgurl=$row['imgurl'];
        echo $url=$row['url'];
+       ?>
 
       <!-- Right Column -->
       <div class="right-column">
@@ -121,6 +123,5 @@
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" charset="utf-8"></script>
     <script src="script.js" charset="utf-8"></script>
-    ?>
   </body>
 </html>
